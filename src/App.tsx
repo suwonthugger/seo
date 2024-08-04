@@ -4,6 +4,7 @@ import Apage from "./pages/Apage";
 import MainPage from "./pages/MainPage";
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 
 function App() {
   const router = createBrowserRouter([
@@ -21,7 +22,11 @@ function App() {
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
+  );
 }
 
 export default App;
